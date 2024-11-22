@@ -36,7 +36,7 @@ public class App {
         input.printlines(0,input.getLineCount());
         Book output = PigLatinTranslator.translate(input);
         output.printlines(0,input.getLineCount());
-        //output.writeToFile();
+        output.writeToFile();
     }
 }
 
