@@ -80,7 +80,14 @@ public class Book
             Scanner scanner = new Scanner(bookUrl.openStream());
             while (scanner.hasNext()) 
             {
-                text.add(scanner.nextLine());
+                String next = scanner.nextLine();
+                if(next.contains("*** START")){
+                    text.clear();
+                }else if (next.contains("*** END")){
+                    break;
+                }else{
+                    text.add(next);
+                }
             }
             scanner.close();
         }
